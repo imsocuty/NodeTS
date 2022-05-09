@@ -3,9 +3,8 @@ import Boards from "@models/board-model";
 
 export default class BoardService {
     static async getBoards(body) {
-        const params = [body.id, body.title, body.content]
-        const result:Array<getUserInterface> = await Boards.getBoards(params);
+        const result:Array<getUserInterface> = await Boards.getBoards();
 
-        return result[0]?.id;
+        return result;
     }
 }

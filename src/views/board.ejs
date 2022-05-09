@@ -1,16 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+    <title>게시판</title>
 </head>
 <body>
-<h1>login</h1>
-<form method="post" action="boards">
-    <label>id :</label><input type="text" name="id"><br>
-    <label>title :</label><input type="text" name="title"><br>
-    <label>content :</label><input type="text" name="content"><br>
-    <input type="submit">
-</form>
+<h1>게시판</h1>
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>제목</td>
+        <td>내용</td>
+
+    </tr>
+    <%
+    for(var i=0; i< result.length; i++)
+    {
+        let data = result[i];
+    %>
+    <tr>
+        <td><%=data.id%></td>
+        <td><%=data.title%></td>
+        <td><%=data.content%></td>
+    </tr>
+    <%}%>
+</table>
 </body>
 </html>
